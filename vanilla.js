@@ -39,14 +39,12 @@
     var node, hasClass, addClass, removeClass, toggleClass, parentNode, children, hide, show, attr, find, append, prepend;
 
     /**
-     * This will return the node list, we can directly call it
-     * to get the root element or iterate it to get full list
-     *
+     * This will return the node e.g. $('#node') => vjs.node('#node') 
      * @param el
-     * @returns {NodeList}
+     * @returns {Element}
      */
     node = function (el) {
-        return document.querySelectorAll(el);
+        return document.querySelector(el);
     };
 
     /**
@@ -65,7 +63,7 @@
      * @param cl
      */
     addClass = function (el, cl) {
-        if (!hasClass(el, cl)) {
+        if (!vjs.hasClass(el, cl)) {
             el.className += ' ' + cl;
         }
     };
@@ -87,10 +85,10 @@
      * @param cl
      */
     toggleClass = function (el, cl) {
-        if (hasClass(el, cl)) {
-            removeClass(el, cl);
+        if (vjs.hasClass(el, cl)) {
+            vjs.removeClass(el, cl);
         } else {
-            addClass(el, cl);
+            vjs.addClass(el, cl);
         }
     };
 
