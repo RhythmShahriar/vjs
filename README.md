@@ -1,4 +1,4 @@
-# VJS (Vanilla JavaScript)
+# VJS (VanillaJS)
 
 This is a tiny helper library for JavaScript to make it easier to use. In general, people use jQuery to reduce the length of the code but to get great cross browser support and reduce the unnecessary load of jQuery this tiny library help to code faster.
 
