@@ -47,7 +47,7 @@
      */
     node = function (el) {
         return document.querySelectorAll(el);
-    }
+    };
 
     /**
      * This will check class existence
@@ -57,7 +57,7 @@
      */
     hasClass = function (el, cl) {
         return el.className && new RegExp("(\\s|^)" + cl + "(\\s|$)").test(el.className);
-    }
+    };
 
     /**
      * This will add class in a node
@@ -65,10 +65,10 @@
      * @param cl
      */
     addClass = function (el, cl) {
-        if (!vanilla.hasClass(el, cl)) {
+        if (!hasClass(el, cl)) {
             el.className += ' ' + cl;
         }
-    }
+    };
 
     /**
      * This will remove class from a node
@@ -78,7 +78,7 @@
     removeClass = function (el, cl) {
         var reg = new RegExp("(\\s|^)" + cl + "(\\s|$)");
         el.className = el.className.replace(reg, " ").replace(/(^\s*)|(\s*$)/g, "");
-    }
+    };
 
     /**
      * This will check class exist or not if exist it
@@ -87,12 +87,12 @@
      * @param cl
      */
     toggleClass = function (el, cl) {
-        if (vanilla.hasClass(el, cl)) {
-            vanilla.removeClass(el, cl);
+        if (hasClass(el, cl)) {
+            removeClass(el, cl);
         } else {
-            vanilla.addClass(el, cl);
+            addClass(el, cl);
         }
-    }
+    };
 
     /**
      * This will find a parent node from it's child node
@@ -101,7 +101,7 @@
      */
     parentNode = function (cl) {
         return document.querySelector(cl).parentNode;
-    }
+    };
 
     /**
      * This will find the child node from it's parent node
@@ -110,7 +110,7 @@
      */
     children = function (el) {
         return document.querySelector(el).children
-    }
+    };
 
     /**
      * This will hide the class by adding display: none
@@ -119,7 +119,7 @@
      */
     hide = function (el) {
         return document.querySelector(el).style.display = 'none';
-    }
+    };
 
     /**
      * This will remove the display: none css add show the class
@@ -128,7 +128,7 @@
      */
     show = function (el) {
         return document.querySelector(el).style.display = '';
-    }
+    };
 
     /**
      * This will help to get and set attr from/to a node
@@ -143,7 +143,7 @@
         } else {
             return document.querySelector(el).getAttribute(prop);
         }
-    }
+    };
 
     /**
      * This will find all the child node inside a node
@@ -153,7 +153,7 @@
      */
     find = function (el, cl) {
         return el.querySelectorAll(cl);
-    }
+    };
 
     /**
      * This will help to append new content inside
@@ -170,7 +170,7 @@
         elContainer.innerHTML = html;
         // Jug it into the parent element
         el.appendChild(elContainer);
-    }
+    };
 
     /**
      * This will help to prepend new content before
@@ -188,11 +188,11 @@
         elContainer.innerHTML = html;
         // Prepend it
         el.insertBefore(elContainer, el.firstChild);
-    }
+    };
 
     /**
      * Definition of vjs helper library
-     * @type {{node: (any), hasClass: (any), addClass: (any), removeClass: (any), toggleClass: (any), parentNode: (any), children: (any), hide: (any), show: (any), attr: (any), find: (any)}}
+     * @type {{node: (), hasClass: (), addClass: (), removeClass: (), toggleClass: (), parentNode: (), children: (), hide: (), show: (any), attr: (any), find: (any)}}
      */
     window.vjs = {
         node: node,
